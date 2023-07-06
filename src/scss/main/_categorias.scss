@@ -1,0 +1,217 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.categorias{  //  ==  #pagina2
+    display: none; //inicialmente las categorias q engloba el menu barra lateral y las categorias de todos los producto no estan visibles
+    .categorias-lateral{
+        display: flex;
+        overflow-y: auto;
+        //overflow-x: scroll;
+        display: none;
+        border-bottom: 1px solid v.$gris;
+        
+        .categoria-l {
+            a { 
+                text-align: left;
+                color: v.$negro;
+                font-weight: 500;
+                font-size: 1.8rem;
+                &:hover {  
+                    cursor: pointer;  
+                }
+            }
+            white-space: nowrap;  //para que no halla salto de linea
+            padding: 1.5rem 2rem 1.5rem 0;
+            .resaltar {  //clase que se agrega o se quita con js
+                border-bottom: 4px solid v.$rojo;
+            }
+        }
+    }//fin categoria barra lateral
+    .mostar-categorias-lateral{  //clase que se manipula con js
+        display: flex;
+        position: sticky;
+        top: 0;
+        background-color: v.$blanco;
+    }
+
+
+    ////////////////////////////////categoria por productos///////////////////////////////////////
+
+    .categoria{
+        .nombre-categoria{
+            color: v.$negro;
+            text-align: left;
+            font-weight: 700;
+            padding-top: 5.2rem;
+        }
+        .producto-contenido{
+            display: flex;
+            //justify-content: space-between;
+            padding: 1rem;
+            gap: 1.5rem;
+
+            .producto-img{  //div de la imagen de cada producto
+                //flex-basis: calc(35% - 1rem);
+                display: flex;  //para centrar la imagen verticalmente
+                align-items: center;
+                width: auto;
+                height: 10rem;
+                img{   //imagen detro del div  
+                    height: 10rem; 
+                    width: 15rem;
+                    object-fit: cover;
+                    border-radius: 1.2rem;
+                }
+            }
+
+            .producto-texto{
+                //flex-basis: calc(65% - 1rem);
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h4{  //nombre produdcto
+                    font-weight: 500;
+                    font-size: 2rem;
+                    text-align: left;
+                    margin-bottom: 1rem;
+                    color: v.$gris;
+                }
+                p{   //descripcion producto
+                    color: v.$gris;
+                    font-weight: 400;
+                    margin-bottom: 1rem;
+                }
+                .btn-mas{  //div q envuelve al precio y al boton '+' 
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    h3{  //precio producto
+                        color: v.$rojo;
+                        text-align: left;   
+                    }
+                    button{
+                        border: none;
+                        color: v.$blanco;
+                        background-color: v.$negro;
+                        border-radius: 50%;
+                        
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }        
+            } //fin descripcion de cada producto      
+        }  //fin producto-contenido
+
+        .producto{
+            border-bottom: 1px solid lighten(v.$gris, 40);
+        }
+
+        .add{       ////////div que inicialmente esta escondido y al dar click en el boton + se desplega para agregar el producto al carrito
+            overflow: hidden;
+            height: 0rem;
+            //transition: all 1s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            //margin-bottom: 1rem;
+            .agregar{
+                .info_variacion{  //estilos a los ingredientes tipo variacion
+                    padding: 1rem 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    label{
+                        color: v.$gris;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                    input{
+                        width: 2rem;
+                    }
+                }
+                .valor-adicional{
+                    display: flex;
+                    justify-content: center;
+                    height: 0;
+                    overflow: hidden;
+                }
+                ///////////////estilo a los ingrdientes tipo adicional//////////////////
+                .adicional{    
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem 2rem;
+                    .gratis{
+                        display: none;
+                    }
+                    label{
+                        color: v.$gris;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                    .select-adicional{
+                        padding: 1rem 2rem;
+                        border: 1px solid v.$gris;
+                        border-radius: 0.8rem;
+                        label{
+                            margin-right: 2rem;
+                            color: v.$negro;
+                            font-size: 1.6rem;
+                            font-weight: 400;
+                        }
+                        .inputadic{
+                            height: 1.725rem;
+                            width:  2rem;
+                        }
+                    }
+                }
+
+            }
+            /////////estilo al bloque de añadir producto y cantidad///////////
+            .cantidadycarrito{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .cantidad{
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid v.$gris;
+                    padding: .7rem 1rem;
+                    border-radius: 0.8rem;
+                    .num{
+                        color: v.$gris;
+                        font-size: 2.3rem;
+                        margin: 0 2rem;
+                    }
+                    .decremento, .incremento{
+                        color: v.$negro;
+                        font-size: 2.5rem;
+                        &:hover{
+                            cursor: pointer;
+                            font-size: 2.1rem;
+                        }     
+                    }
+                }
+            
+                .añadir{     // boton añadir producto al carrito     
+                    @include m.boton2(v.$negro, v.$blanco);
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        } //fin de div add q inicialmente esta escondido
+        .abrir_add{  //clase que se agrega con js al elemento div de class .add
+            height: 100%;
+        }
+    }  //fin categoria
+    .ocultar-categoria{
+        display: none;
+    }
+margin-bottom: 5rem; 
+} //fin categorias
+.mostar-pagina2{  //clase que se manipula con js
+    display: block;
+}

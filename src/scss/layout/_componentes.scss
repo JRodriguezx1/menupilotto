@@ -1,0 +1,83 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.boton-arriba{
+    width: 4rem;
+    height: 4rem;
+    background-color: v.$grisOpacity;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 13rem;
+    right: 2.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // animation: ws 1.2s 2s infinite linear;
+    display: none;
+    z-index: 15;
+    &:hover {
+        background-color: v.$gris;
+    }
+    .btn-up {
+        color: v.$blanco;
+        font-size: 2rem;
+        font-weight: 400;
+        // transform: rotateZ(270deg);
+        padding: 1rem;
+    }
+}
+
+@keyframes ws {
+    0%{box-shadow: 0 0 0 0 rgba( v.$verde, 0.9);  } 
+    50%{box-shadow: 0 0 0 8px rgba( v.$verde, 0.7);}
+    100%{box-shadow: 0 0 0 15px rgba( v.$verde, 0); }
+}
+
+//////////////estilos a los contadores de los ingredientes variacion//////////////////
+.cantidad-ingred{
+    border: 1px solid v.$gris;
+    border-radius: .8rem;
+    padding: 1rem;
+    label{
+        margin-right: 2rem;
+    }
+    .incremento-ingred, .decremento-ingred{
+        border-radius: 50%;
+        border: 1px solid v.$negro;
+        padding: .2rem .7rem;
+        background-color: v.$negro;
+        color: v.$blanco;
+        &:hover{
+            cursor: pointer;
+        }     
+    }
+    .decremento-ingred{
+        font-size: 2rem;
+        padding: 0rem .9rem;
+    }
+    .num-ingred{
+        color: v.$negro;
+    }
+    input{
+        width: 2rem;
+        height: 1.725rem;
+        margin-left: 2rem;
+    }
+}
+
+
+.alerta{
+    margin-top: 3rem;
+    p{
+        text-align: center;
+        line-height: 1.5;
+        font-size: 1.7rem;
+        color: lighten(v.$rojo, 10);
+    }
+}
+
+.sweetbtn{  //clase de sweetalert2
+    font-size: 1.5rem !important;
+}

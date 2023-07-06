@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu-pilotto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
+    <script src="https://kit.fontawesome.com/f679d6d558.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+    <div class="svg-superior">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#062a47" fill-opacity="1" d="M0,128L40,138.7C80,149,160,171,240,176C320,181,400,171,480,138.7C560,107,640,53,720,64C800,75,880,149,960,160C1040,171,1120,117,1200,117.3C1280,117,1360,171,1400,197.3L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+    </div>
+    
+    <div id="menu-lateral" class="menu-lateral">  <!--menu lateral-->
+            <label id="cerrar-menuL" for="">x</label>
+            <ul>
+                <li>
+                    <img src="build/img/pedir-cuenta.png" alt="Pedir Cuenta">
+                    <p>Pedir Cuenta</p>   
+                </li>
+                <li>
+                    <img src="build/img/mesero.png" alt="mesero">
+                    <p>LLamar Mesero</p>   
+                </li>
+                <!-- <li>
+                    <img src="build/img/metodo-de-pago1.png" alt="metodo de pago">
+                    <p>Metodo de Pago</p>   
+                </li> -->
+                <li>
+                    <img id="abrir-carrito" src="build/img/orden.png" alt="orden de pedido">
+                    <p>Realizar Pedido</p>   
+                </li>
+            </ul>
+    </div>   <!--fin menu lateral-->
+
+    
+    <div id="carrito-compras" class="carrito-compras"> <!--carrito de compras-->
+        <div class="contenedor">
+            <div class="tu-pedido">
+                <h2>Tu Pedido</h2>
+                <label id="cerrar-carrito" for="">X</label>
+            </div>
+            <div class="carrito">
+                <table id="lista-carrito" class="carrito-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>total</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p class="valor-total"></p>
+                <a href="#" id="continuar" class="carrito-continuar">Continuar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="presencial-domicilio"> <!-- bloque oculto inicialmente, se activa con js cuando se de click en boton continuar del carrito-->
+        <div class="contenedor">
+            <div class="atras">
+                <a class="enlace-atras" href="#"><span><</span> Atrás</a> 
+            </div>
+            <h3>Elige el método de despacho de tu pedido</h3>
+            <div class="contenido-p-d">
+                <div class="carrito-continuar-p">
+                    <i class="fa-solid fa-bell-concierge bell"></i>
+                    <a href="#" id="Presencial">Presencial</a>
+                </div>
+                
+                <div class="carrito-continuar-d">
+                    <i class="fa-solid fa-truck-fast bell"></i>
+                    <a href="#" id="Domicilio">Domicilio</a>
+                </div>   
+            </div>
+
+            <div class="formulario-presencial">  <!-- bloque si es presencial-->
+                <form id="form-presencial" action="">
+                    <h4>Por favor ingrese la siguiente información</h4>
+
+                    <div class="datos-presencial">
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                    </div>
+
+                    <div class="datos-presencial">
+                        <input type="number" class="form-control" name="movil" id="movil"  placeholder="Teléfono">
+                    </div>
+
+                    <div class="datos-presencial">
+                        <input  type="number" class="form-control" name="num_mesa" id="num_mesa" placeholder="Número Mesa" required>
+                    </div>
+
+                    <div class="datos-presencial">
+                        <textarea class="form-control" name="observacion" id="msj-presencial" placeholder="Observación"></textarea>
+                    </div>
+                        
+                    <div class="enviar-orden">
+                        <button type="submit">
+                            <i class="fa-solid fa-share bell"></i>
+                            Enviar Orden
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="formulario-domicilio">  <!-- bloque si es domicilio-->
+                <form id="form-domicilio" action="">
+                    <h4>Ingrese tus datos a continuacion</h4>
+                    <div class="datos-domicilio">
+
+                        <div class="datos-presencial">
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
+                        </div>
+
+                        <div class="datos-presencial">
+                            <input type="number" class="form-control" name="movil" id="movil" placeholder="Teléfono" required>
+                        </div>
+
+                        <div class="datos-presencial">
+                            <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Ciudad" required>
+                        </div>
+
+                        <div class="datos-presencial">
+                            <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direción" required>
+                        </div>
+
+                        <div class="datos-presencial">
+                            <textarea class="form-control" name="observacion" id="msj-domicilio" placeholder="Observación"></textarea>
+                        </div>
+
+                    </div>
+                    <button type="submit">
+                        <i class="fa-solid fa-share bell"></i>
+                        Solicitar Pedido
+                    </button>
+                </form>
+            </div>
+
+            <div class="alerta">
+                <p id="alerta"></p>
+            </div>
+        </div> <!-- fin contenedor-->
+    </div> <!-- fin presencial-domicilio-->
+
+    
+
+    <header>    
+        <nav class="navegacion">
+            <div class="menu-movil">
+                
+                <!-- <img class="img-carrito" src="build/img/carrito-de-compras oscuro.png" alt="carrito de compra"> -->
+                <label class="abrir-menu" id="abrir-menuL" for="">
+                    <i class="fa-solid fa-bars"></i>
+                </label>  
+            </div>
+        </nav>
+
+        <div class="home">
+                       
+            <a class="enlace-home" href="#">
+                <img src="build/img/ruta97.png" alt="logo del restaurante">
+            </a>
+
+            <div class="rrss">
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.google.com/maps/dir//ruta+97/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x8e38f544b2526037:0x78a7b13147303c46?sa=X&ved=2ahUKEwjBz7TP4pz7AhX6RTABHZw5Cb0Q9Rd6BAhTEAQ">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+        </div>
+        <!-- <div class="contenedor contenido-header">
+            <h1>Bienvenido: <span>Annie Restaurante</span></h1>   
+        </div> -->
+    </header>  <!-- fin del header total-->
+
+     <!--boton flotante                 3135421983--> 
+     <div class="btn-flotante">
+        <a href="https://api.whatsapp.com/send?phone=573135421983" target="_blank"><img loading="lazy" src="build/img/icons-whatsapp-verde.png" alt="icono de whatsapp"></a>
+    </div>
+
+
+    <main>
+        <!-- barra texto de categoria y ver todo-->
+        <div class="barra-categorias">
+            <div class="contenedor barra-categorias-texto">
+                <h2>Categorias</h2>
+                <h4 class="ver-todo">MENU</h4>
+            </div>
+        </div>
+
+        <div id="pagina1" class="contenedor ver-todo-categorias"> <!--pagina 1 cuando se presiona boton ver todo-->
+            <h3>MENU <span>Annie</span></h3>
+            <div class="pagona1-contenido">  <!--inicialmente esta oculto con css-->
+                <a class="pagina1-categoria">Pedir Cuenta</a>
+                <a class="pagina1-categoria">LLamar Mesero</a>
+                <a class="pagina1-categoria">Realizar Pedido</a>
+            </div>
+        </div>
+
+
+
+        <section id="pagina2" class="categorias">
+            
+            <div class="contenedor">
+
+                <div class="categorias-lateral"> <!--categoria tipo slider barra lateral-->
+                    <!-- <div class="categoria-l"> 
+                    <a href="#categoria1">Carne al carbon</a>
+                    </div>   -->
+
+                    <!-- aqui se agregan las categorias dinamicamente con api js-->
+                </div>
+
+                <!-- aqui se agregan los productos por categoria por js--> 
+
+            </div> <!--fin contenedor-->
+        </section> <!--fin de categorias-->
+        
+    </main>
+
+    <div class="boton-arriba">
+        <a class="btn-up" href="#">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+    </div>
+
+    <div class="carrito-inferior">
+        <img class="img-carrito" src="build/img/carrito-de-compra blanco.png" alt="carrito de compra">  
+    </div>
+
+    <footer>
+
+        <div>
+            <div class="footer-restaurante">
+                <div class="home">
+                    <img src="build/img/ruta97.png" alt="Logo Restaurante">
+                </div>
+                <div class="info-footer">
+                    <h2>Restaurante Ruta 97</h2>
+                    <p>Teléfono: 3224551782</p>
+                    <p>Dirección: Barrio El Poblado <br> Armenia Quindío</p>
+                </div>
+                
+                <div class="bloque-rrss">
+                    
+                    <div class="rrss">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.google.com/maps/dir//ruta+97/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x8e38f544b2526037:0x78a7b13147303c46?sa=X&ved=2ahUKEwjBz7TP4pz7AhX6RTABHZw5Cb0Q9Rd6BAhTEAQ">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="desarrollo">
+            <p>Copyright © <span>2022</span> desarrollado by 
+                <a href="#">InnovaTech</a> - 
+                <a href="https://pilotto.co/es/">Pilotto</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src="build/js/api.js" type="module"></script>
+    <script src="build/js/app.js" type="module"></script>
+    <script src="build/js/carrito.js" type="module"></script>
+
+</body>
+</html>

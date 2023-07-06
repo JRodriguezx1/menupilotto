@@ -1,0 +1,33 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+}
+.contenedor {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+a {
+    font-family: v.$fuente_secundaria;
+    text-decoration: none;
+}
+p {
+    font-family: v.$fuente_secundaria;
+}
+
+img {
+    max-width: 100%;
+}
+

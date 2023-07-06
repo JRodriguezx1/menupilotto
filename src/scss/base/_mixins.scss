@@ -1,0 +1,87 @@
+@use 'variables' as v;
+
+/** Media Queries **/
+@mixin telefonoS {
+    @media (min-width: v.$telefonoS) {
+        @content;
+    }
+}
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin telefono460 {
+    @media (min-width: v.$telefono460) {
+        @content;
+    }
+}
+@mixin telefono520 {
+    @media (min-width: v.$telefono520) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin tabletl {
+    @media (min-width: v.$tabletl) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin desktopxl {
+    @media (min-width: v.$desktopxl) {
+        @content;
+    }
+}
+
+
+@mixin boton($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1.5rem 4rem;
+    color: $colorTexto;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    display: inline-block;
+    font-weight: 700;
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 5rem 0;
+
+    @include tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: darken( $bgColor, 10% );
+        cursor: pointer;
+    }
+}
+
+@mixin boton2($bgcolor, $colortexto) {
+    display: inline-block;
+    background-color: $bgcolor;
+    color: $colortexto;
+    padding: 1.4rem 3rem; 
+    font-weight: 700;
+    border: none;
+    border-radius: 0.8rem;
+    
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}

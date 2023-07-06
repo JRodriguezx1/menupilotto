@@ -1,0 +1,44 @@
+[
+    {
+        "fk_producto": "62",
+        "0": "62",
+        "fk_adicional": "63",
+        "1": "63"
+    },
+    {
+        "fk_producto": "74",
+        "0": "74",
+        "fk_adicional": "63",
+        "1": "63"
+    },
+    {
+        "fk_producto": "80",
+        "0": "80",
+        "fk_adicional": "63",
+        "1": "63"
+    },
+    {
+        "fk_producto": "80",
+        "0": "80",
+        "fk_adicional": "76",
+        "1": "76"
+    },
+    {
+        "fk_producto": "80",
+        "0": "80",
+        "fk_adicional": "95",
+        "1": "95"
+    },
+    {
+        "fk_producto": "80",
+        "0": "80",
+        "fk_adicional": "96",
+        "1": "96"
+    },
+    {
+        "fk_producto": "80",
+        "0": "80",
+        "fk_adicional": "97",
+        "1": "97"
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "id": "0",
+        "0": "0",
+        "nombre": "Gestion",
+        "1": "Gestion",
+        "fk_cocina": "1",
+        "2": "1",
+        "anexos": "",
+        "3": "",
+        "orden": "-1",
+        "4": "-1"
+    },
+    {
+        "id": "1",
+        "0": "1",
+        "nombre": "Comidas",
+        "1": "Comidas",
+        "fk_cocina": "1",
+        "2": "1",
+        "anexos": "",
+        "3": "",
+        "orden": "1",
+        "4": "1"
+    },
+    {
+        "id": "2",
+        "0": "2",
+        "nombre": "Bebidas",
+        "1": "Bebidas",
+        "fk_cocina": "1",
+        "2": "1",
+        "anexos": "",
+        "3": "",
+        "orden": "2",
+        "4": "2"
+    },
+    {
+        "id": "3",
+        "0": "3",
+        "nombre": "Licores",
+        "1": "Licores",
+        "fk_cocina": "1",
+        "2": "1",
+        "anexos": "",
+        "3": "",
+        "orden": "3",
+        "4": "3"
+    },
+    {
+        "id": "4",
+        "0": "4",
+        "nombre": "Helados",
+        "1": "Helados",
+        "fk_cocina": "1",
+        "2": "1",
+        "anexos": "",
+        "3": "",
+        "orden": "5",
+        "4": "5"
+    },
+    {
+        "id": "5",
+        "0": "5",
+        "nombre": "Granola",
+        "1": "Granola",
+        "fk_cocina": "1",
+        "2": "1",
+        "anexos": "",
+        "3": "",
+        "orden": "4",
+        "4": "4"
+    }
+]

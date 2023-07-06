@@ -1,0 +1,19 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.carrito-inferior{
+    display: none;
+    background-color: v.$negro;
+    text-align: center;
+    padding: .4rem;
+    position: sticky;
+    bottom: 0rem;
+    right: 0rem;
+    width: 100%;
+    z-index: 10;
+    margin-bottom: -0.5rem;
+
+    img{
+        width: 3.5rem;
+    }
+}

@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.ver-todo-categorias{  // == #pagina1
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    h3{
+        margin-bottom: 2rem;
+    }
+    // border-bottom: 1px solid lighten(v.$gris, 40);
+    .pagona1-contenido{
+        @include m.grid(2, 3rem);
+        a{
+            padding: 1rem 0;
+            color: v.$gris;
+            text-align: center;
+            display: block;
+            &:hover{
+                cursor: pointer;
+                background-color: v.$rojo;
+                color: v.$blanco;
+                border: 1px solid v.$rojo;
+            }
+        }
+        .pagina1-categoria{
+            border: 1px solid v.$gris;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+.ocultar-pagina1{   //clase que se manipula con js
+    display: none;
+}
