@@ -1,5 +1,5 @@
 # Menu Digital pilotto
-![Imagen del proyecto](https://github.com/JRodriguezx1/festivalmusic/blob/master/build/img/festival2021.png?raw=true)
+![Imagen del proyecto](https://github.com/JRodriguezx1/menupilotto/blob/master/build/img/app1.png?raw=true)
 
 ## Ejemplo en vivo
 - [URL de la pagina web](https://menupilotto.netlify.app/)
@@ -19,8 +19,8 @@ Desarollado con Html, Css/Sass y Javascript unicamente.
 ## Vista previa del proyecto
 Si quieres hechas un vistazo al proyecto, te recomiendo:
 
-![Captura del proyecto](https://github.com/JRodriguezx1/festivalmusic/blob/master/build/img/festival2021b.png?raw=true)
-![Captura del proyecto](https://github.com/JRodriguezx1/festivalmusic/blob/master/build/img/imagen_rock.jpg?raw=true)
+![Captura del proyecto](https://github.com/JRodriguezx1/menupilotto/blob/master/build/img/app2.png?raw=true)
+![Captura del proyecto](https://github.com/JRodriguezx1/menupilotto/blob/master/build/img/app3.png?raw=true)
 
 
 ## Autor ✒️
